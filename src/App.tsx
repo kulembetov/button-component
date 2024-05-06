@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Credits } from "components/Credits/Credits";
-import { Button } from "components/Button/Button";
-import { StarIcon } from "components/StarIcon/StarIcon";
+import { Credits } from "./components/Credits/Credits";
+import { Button } from "./components/Button/Button";
+import { StarIcon } from "./components/StarIcon/StarIcon";
 
 const App = () => {
   return (
