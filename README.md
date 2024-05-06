@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# GreatFrontend Button Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This button component is part of GreatFrontend's design system, ensuring UI consistency across various apps and challenges on the platform.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Ensure React and React Router are installed in your project:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install react react-router-dom
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Button Types
 
-### `npm test`
+The component supports the following types:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `primary`
+- `secondary`
+- `tertiary`
+- `link-color`
+- `link-gray`
+- `destructive`
 
-### `npm run build`
+## Button Sizes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Available sizes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `small`
+- `medium`
+- `large`
+- `extra-large`
+- `extra-large-2`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Props
 
-### `npm run eject`
+- `children` (React.ReactNode): Content of the button. Optional.
+- `type` (required): Button type, one of the six specified types.
+- `size` (required): One of the defined sizes.
+- `disabled` (boolean): If true, the button is inactive. Default is false. Optional.
+- `onClick` (function): Handler for click events. Optional.
+- `iconColor` (string): Color of the icon. Optional.
+- `iconBefore` (ReactElement): Icon displayed before the content. Optional.
+- `iconAfter` (ReactElement): Icon displayed after the content. Optional.
+- `iconCenter` (ReactElement): Icon displayed at the center. Optional.
+- `iconOnly` (boolean): If true, only the icon is displayed. Default is false. Optional.
+- `hoverColor` (string): Icon color on hover, defaults to `iconColor`. Optional.
+- `to` (string): URL to navigate on button click, requires `react-router-dom`. Optional.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage Example
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```jsx
+import React from "react";
+import { Button } from "./components/Button/Button"; // Adjust path as necessary
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+const App = () => {
+  return (
+    <Button
+      type="primary"
+      size="large"
+      iconBefore={<StarIcon />}
+      iconAfter={<StarIcon />}
+      to="/"
+    >
+      Large
+    </Button>
+  );
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default App;
+```
 
-## Learn More
+## Styling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Styles are defined in `button.module.css`. Ensure this file is imported to apply the default styles. Extend these styles as needed.
