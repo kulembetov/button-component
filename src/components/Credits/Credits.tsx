@@ -1,4 +1,5 @@
-import styles from "./Credits.module.css";
+import React from "react";
+import styles from "./credits.module.css";
 
 export const Credits = () => {
   return (
