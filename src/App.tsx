@@ -8,23 +8,21 @@ const App = () => {
   return (
     <div className="flex flex-col gap-12 mt-[7rem] mb-[7rem]">
       <div className="max-w-full flex flex-wrap gap-5 items-center justify-center">
-        <Button type="primary" size="large" to="/">
+        <Button type="primary" size="medium" to="/">
+          Button CTA
+        </Button>
+        <Button type="primary" size="large" iconBefore={<StarIcon />} to="/">
           Button CTA
         </Button>
         <Button
           type="primary"
           size="extra-large"
-          iconBefore={<StarIcon />}
+          iconAfter={<StarIcon />}
           to="/"
         >
           Button CTA
         </Button>
-        <Button
-          type="primary"
-          size="extra-large-2"
-          iconAfter={<StarIcon />}
-          to="/"
-        >
+        <Button type="primary" size="extra-large-2" to="/">
           Button CTA
         </Button>
         <Button
@@ -37,12 +35,12 @@ const App = () => {
       </div>
 
       <div className="max-w-full flex flex-wrap gap-5 items-center">
-        <Button type="secondary" size="large" iconColor="#171717" to="/">
+        <Button type="secondary" size="medium" iconColor="#171717" to="/">
           Button CTA
         </Button>
         <Button
           type="secondary"
-          size="extra-large"
+          size="large"
           iconColor="#171717"
           iconBefore={<StarIcon />}
           to="/"
@@ -51,9 +49,17 @@ const App = () => {
         </Button>
         <Button
           type="secondary"
-          size="extra-large-2"
+          size="extra-large"
           iconColor="#171717"
           iconAfter={<StarIcon />}
+          to="/"
+        >
+          Button CTA
+        </Button>
+        <Button
+          type="secondary"
+          size="extra-large-2"
+          iconColor="#171717"
           to="/"
         >
           Button CTA
@@ -69,12 +75,12 @@ const App = () => {
       </div>
 
       <div className="max-w-full flex flex-wrap gap-5 items-center">
-        <Button type="tertiary" size="large" iconColor="#4338CA" to="/">
+        <Button type="tertiary" size="medium" iconColor="#4338CA" to="/">
           Button CTA
         </Button>
         <Button
           type="tertiary"
-          size="extra-large"
+          size="large"
           iconColor="#4338CA"
           iconBefore={<StarIcon />}
           to="/"
@@ -83,11 +89,14 @@ const App = () => {
         </Button>
         <Button
           type="tertiary"
-          size="extra-large-2"
+          size="extra-large"
           iconColor="#4338CA"
           iconAfter={<StarIcon />}
           to="/"
         >
+          Button CTA
+        </Button>
+        <Button type="tertiary" size="extra-large-2" iconColor="#4338CA" to="/">
           Button CTA
         </Button>
         <Button
@@ -135,6 +144,15 @@ const App = () => {
           size="extra-large-2"
           iconColor="#4338CA"
           hoverColor="#3730A3"
+          to="/"
+        >
+          Button CTA
+        </Button>
+        <Button
+          type="link-color"
+          size="extra-large-2"
+          iconColor="#4338CA"
+          hoverColor="#3730A3"
           iconCenter={<StarIcon />}
           to="/"
           isIconOnly={true}
@@ -178,6 +196,15 @@ const App = () => {
           size="extra-large-2"
           iconColor="#525252"
           hoverColor="#171717"
+          to="/"
+        >
+          Button CTA
+        </Button>
+        <Button
+          type="link-gray"
+          size="extra-large-2"
+          iconColor="#525252"
+          hoverColor="#171717"
           iconCenter={<StarIcon />}
           to="/"
           isIconOnly={true}
@@ -187,12 +214,12 @@ const App = () => {
       </div>
 
       <div className="max-w-full flex flex-wrap gap-5 items-center">
-        <Button type="destructive" size="large" iconColor="#fff" to="/">
+        <Button type="destructive" size="medium" iconColor="#fff" to="/">
           Button CTA
         </Button>
         <Button
           type="destructive"
-          size="extra-large"
+          size="large"
           iconColor="#fff"
           iconBefore={<StarIcon />}
           to="/"
@@ -201,11 +228,14 @@ const App = () => {
         </Button>
         <Button
           type="destructive"
-          size="extra-large-2"
+          size="extra-large"
           iconColor="#fff"
           iconAfter={<StarIcon />}
           to="/"
         >
+          Button CTA
+        </Button>
+        <Button type="destructive" size="extra-large-2" iconColor="#fff" to="/">
           Button CTA
         </Button>
         <Button
