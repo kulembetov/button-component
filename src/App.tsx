@@ -4,7 +4,7 @@ import { Credits } from "./components/Credits/Credits";
 import { Button } from "./components/Button/Button";
 import { StarIcon } from "./components/StarIcon/StarIcon";
 
-function App() {
+const App = () => {
   return (
     <div className="flex flex-col gap-12 mt-[7rem] mb-[7rem]">
       <div className="max-w-full flex flex-wrap gap-5 items-center">
@@ -394,6 +394,6 @@ function App() {
       <Credits />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,18 +1,39 @@
-import React, { useState } from "react";
-import styles from "./Button.module.css";
+import React, { useState, ReactElement } from "react";
+import styles from "./button.module.css";
 import { useNavigate } from "react-router-dom";
 
-export const Button = ({
+interface ButtonProps {
+  children?: React.ReactNode;
+  type:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "link-color"
+    | "link-gray"
+    | "destructive";
+  size: "small" | "medium" | "large" | "extra-large" | "extra-large-2";
+  disabled?: boolean;
+  onClick?: () => void;
+  iconColor?: string;
+  iconBefore?: ReactElement;
+  iconAfter?: ReactElement;
+  iconCenter?: ReactElement;
+  iconOnly?: boolean;
+  hoverColor?: string;
+  to?: string;
+}
+
+export const Button: React.FC<ButtonProps> = ({
   children,
   type,
   size,
-  disabled,
+  disabled = false,
   onClick,
   iconColor,
   iconBefore,
   iconAfter,
   iconCenter,
-  iconOnly,
+  iconOnly = false,
   hoverColor = iconColor,
   to,
 }) => {
