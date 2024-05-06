@@ -38,13 +38,13 @@ Available sizes:
 - `children` (React.ReactNode): Content of the button. Optional.
 - `type` (required): Button type, one of the six specified types.
 - `size` (required): One of the defined sizes.
-- `disabled` (boolean): If true, the button is inactive. Default is false. Optional.
+- `isDisabled` (boolean): If true, the button is inactive. Default is false. Optional.
 - `onClick` (function): Handler for click events. Optional.
 - `iconColor` (string): Color of the icon. Optional.
 - `iconBefore` (ReactElement): Icon displayed before the content. Optional.
 - `iconAfter` (ReactElement): Icon displayed after the content. Optional.
 - `iconCenter` (ReactElement): Icon displayed at the center. Optional.
-- `iconOnly` (boolean): If true, only the icon is displayed. Default is false. Optional.
+- `isIconOnly` (boolean): If true, only the icon is displayed. Default is false. Optional.
 - `hoverColor` (string): Icon color on hover, defaults to `iconColor`. Optional.
 - `to` (string): URL to navigate on button click, requires `react-router-dom`. Optional.
 
@@ -66,7 +66,7 @@ const App = () => {
       Large
     </Button>
   );
-}
+};
 
 export default App;
 ```

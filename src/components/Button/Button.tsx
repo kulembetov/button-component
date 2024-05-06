@@ -12,13 +12,13 @@ interface ButtonProps {
     | "link-gray"
     | "destructive";
   size: "small" | "medium" | "large" | "extra-large" | "extra-large-2";
-  disabled?: boolean;
+  isDisabled?: boolean;
   onClick?: () => void;
   iconColor?: string;
   iconBefore?: ReactElement;
   iconAfter?: ReactElement;
   iconCenter?: ReactElement;
-  iconOnly?: boolean;
+  isIconOnly?: boolean;
   hoverColor?: string;
   to?: string;
 }
@@ -27,13 +27,13 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   type,
   size,
-  disabled = false,
+  isDisabled = false,
   onClick,
   iconColor,
   iconBefore,
   iconAfter,
   iconCenter,
-  iconOnly = false,
+  isIconOnly = false,
   hoverColor = iconColor,
   to,
 }) => {
@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (disabled) return;
+    if (isDisabled) return;
     if (to) navigate(to);
     if (onClick) onClick();
   };
@@ -50,8 +50,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`${styles.button} ${styles[type]} ${styles["size-" + size]} ${iconOnly ? styles[`size-${size}-iconOnly`] : ""} ${disabled ? styles.disabled : ""}`}
-      disabled={disabled}
+      className={`${styles.button} ${styles[type]} ${styles["size-" + size]} ${isIconOnly ? styles[`size-${size}-iconOnly`] : ""} ${isDisabled ? styles.disabled : ""}`}
+      disabled={isDisabled}
       onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -59,7 +59,7 @@ export const Button: React.FC<ButtonProps> = ({
       {iconBefore && (
         <span className={styles.icon}>
           {React.cloneElement(iconBefore, {
-            color: disabled
+            color: isDisabled
               ? disabledColor
               : isHovered
                 ? hoverColor
@@ -67,11 +67,11 @@ export const Button: React.FC<ButtonProps> = ({
           })}
         </span>
       )}
-      {!iconOnly && children}
+      {!isIconOnly && children}
       {iconCenter && (
         <span className={styles.icon}>
           {React.cloneElement(iconCenter, {
-            color: disabled
+            color: isDisabled
               ? disabledColor
               : isHovered
                 ? hoverColor
@@ -82,7 +82,7 @@ export const Button: React.FC<ButtonProps> = ({
       {iconAfter && (
         <span className={styles.icon}>
           {React.cloneElement(iconAfter, {
-            color: disabled
+            color: isDisabled
               ? disabledColor
               : isHovered
                 ? hoverColor
