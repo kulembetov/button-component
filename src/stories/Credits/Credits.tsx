@@ -17,7 +17,7 @@ export const Credits = () => {
       </a>
       . Built by
       <a
-        href="https://www.greatfrontend.com/projects/u/kulembetov"
+        href="https://github.com/kulembetov"
         target="_blank"
         rel="noreferrer"
         className={styles.link}
